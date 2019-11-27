@@ -1,24 +1,32 @@
-# README
+# Movie-Groove-app (Movie Review Site)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## User
+- Username
+- Email
+- Password
+- has_many :reviews
+- has_many :movies through: :reviews
 
-Things you may want to cover:
+#Genre
+- Name
+- has_many :movies
 
-* Ruby version
 
-* System dependencies
+## Movie
+- Name
+- Description
+- genre_id
+- has_many :reviews
+- has_many :users through: :reviews
+- belongs_to :genre
+- belongs_to :user 
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Reviews
+- Stars
+- Title
+- Content
+- Movie_id
+- User_id
+- belongs_to :movie
+- belongs_to :user
