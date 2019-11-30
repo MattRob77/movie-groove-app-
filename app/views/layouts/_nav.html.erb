@@ -5,5 +5,6 @@
           <li><%= link_to "Signup", new_user_registration_path %></li>
     <% else %>
           <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
+          <li><%= link_to "Add a Movie Review", new_review_path %></li> 
     <% end %>
 </ul>
