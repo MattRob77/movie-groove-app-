@@ -1,0 +1,29 @@
+<h1> You are grooving! </h1>
+<%= render partial: 'errors', locals:{objects: @movie}%>
+
+<%= form_for(@movie) do |f|%>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <p> Select a Movie that already exists: </p>
+  <div>
+    <%= f.collection_select :user_id, Movie.all, :id, :name, include_blank: "Pick one" %>
+
+  </div>
+
+  <p> Or create a new Movie: </p>
+  <div>
+    <%= f.fields_for :movie do |m| %>
+      <%= m.label :name %>
+      <%= m.text_field :name %>
+    <% end %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
