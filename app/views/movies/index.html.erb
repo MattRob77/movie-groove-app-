@@ -1,1 +1,6 @@
-<h1> Welcome to your movie index </h1>
+<h1> What review would you like to read? </h1>
+
+<%= @movies.each do |m| %>
+    <h2> <%= m.name %> </h2>
+    <p> <%= m.description %> </p>
+<% end %>

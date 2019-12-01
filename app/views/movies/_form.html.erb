@@ -11,17 +11,17 @@
     <%= f.text_field :description %>
   </div>
 
-  <p> Select a Movie that already exists: </p>
+  <p> Select a Genre that already exists: </p>
   <div>
-    <%= f.collection_select :user_id, Movie.all, :id, :name, include_blank: "Pick one" %>
+    <%= f.collection_select :user_id, Genre.all, :id, :name, include_blank: "Pick one" %>
 
   </div>
 
-  <p> Or create a new Movie: </p>
+  <p> Or create a new Genre: </p>
   <div>
-    <%= f.fields_for :movie do |m| %>
-      <%= m.label :name %>
-      <%= m.text_field :name %>
+    <%= f.fields_for :movie do |g| %>
+      <%= g.label :name %>
+      <%= g.text_field :name %>
     <% end %>
   </div>
 
