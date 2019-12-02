@@ -13,13 +13,13 @@
 
   <p> Select a Genre that already exists: </p>
   <div>
-    <%= f.collection_select :user_id, Genre.all, :id, :name, include_blank: "Pick one" %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "Pick one" %>
 
   </div>
 
   <p> Or create a new Genre: </p>
   <div>
-    <%= f.fields_for :movie do |g| %>
+    <%= f.fields_for :genre do |g| %>
       <%= g.label :name %>
       <%= g.text_field :name %>
     <% end %>

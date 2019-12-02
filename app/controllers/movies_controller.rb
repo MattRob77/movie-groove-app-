@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    @movie.user_id = session[:user_id]
+    @movie.user_id = current_user.id
     if @movie.save
       redirect_to movie_path(@movie)
     else
@@ -23,6 +23,6 @@ end
 private
 
   def movie_params
-    params.require(:movie).permit(:name, :description, :genre_id, genre_attributes: [:name])
+    params.require(:movie).permit(:name, :description, :user_id, :genre_id, genre_attributes: [:name])
   end
 end
