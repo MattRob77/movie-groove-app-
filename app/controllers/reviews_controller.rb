@@ -1,6 +1,16 @@
 class ReviewsController < ApplicationController
 
-  def new
-    @review = Review.new 
+  def index
+
   end
+
+  def new
+    @review = Review.new
+  end
+
+  def create
+
+  end
+
+  private 
 end
