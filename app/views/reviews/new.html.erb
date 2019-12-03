@@ -1,4 +1,13 @@
 <%= form_for(@review) do |f|%>
+<% if params[:movie_id] %>
+   <%= f.hidden_field :movie_id %>
+<% else %>
+   <div>
+      <%= f.label :movie_id, "Select a Movie" %>
+      <%= f.collection_select :movie_id, Movie.all, :id, :name, include_blank: true %> 
+
+   </div>
+
   <div>
     <%= f.label :stars %>
     <%= f.text_field :stars %>
@@ -16,4 +25,4 @@
 
   <%= f.submit %>
 
-  <% end %> 
+  <% end %>
