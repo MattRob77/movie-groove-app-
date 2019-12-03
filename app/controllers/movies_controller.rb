@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movies.all
+    @movies = Movie.all
   end
 
   def new
@@ -13,11 +13,16 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.user_id = current_user.id
     if @movie.save
-      redirect_to movie_path(@movie)
+      redirect_to movies_path
     else
         @movie.build_genre
       render :new
     end
+
+    def show
+      render :index
+    end
+
 end
 
 private
