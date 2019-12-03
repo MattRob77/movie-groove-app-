@@ -4,9 +4,9 @@
 <% else %>
    <div>
       <%= f.label :movie_id, "Select a Movie" %>
-      <%= f.collection_select :movie_id, Movie.all, :id, :name, include_blank: true %> 
-
-   </div>
+      <%= f.collection_select :movie_id, Movie.all, :id, :name, include_blank: true %>
+  </div>
+  <% end %>
 
   <div>
     <%= f.label :stars %>

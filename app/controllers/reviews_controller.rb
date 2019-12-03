@@ -5,12 +5,16 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new
+    if @movie = Movie.find_by_id (param[:movie_id])
+      @review = @movie.reviews.build
+    else
+      @review = Review.new
+    end 
   end
 
   def create
 
   end
 
-  private 
+  private
 end
