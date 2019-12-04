@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     if @movie = Movie.find_by_id(params[:movie_id])
       @reviews = @movie.reviews.all
     else
-      @review = Review.all
+      @reviews = Review.all
     end
   end
 

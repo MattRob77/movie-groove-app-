@@ -5,4 +5,7 @@ class Movie < ApplicationRecord
 
   accepts_nested_attributes_for :genre
 
+  validates :name, presence: true
+  validates :description, presence: true 
+
 end
