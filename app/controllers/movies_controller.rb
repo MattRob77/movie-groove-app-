@@ -18,12 +18,11 @@ class MoviesController < ApplicationController
         @movie.build_genre
       render :new
     end
+  end
 
-    def show
-      render :index
-    end
+  def ratings
 
-end
+  end 
 
 private
 
