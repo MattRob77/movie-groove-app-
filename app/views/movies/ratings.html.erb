@@ -6,4 +6,5 @@
     <h4><%= r.title %> - <%= r.stars %></h4>
     <p><%= r.content %></p>
   <% end %>
+  <%= link_to "Review this movie", new_movie_review_path(m)%>
 <% end %>

@@ -1,7 +1,6 @@
 <%= render partial: 'layouts/errors', locals:{objects: @review}%>
 <% if @movie %>
-    <h1> Let's write a groovy review for <%=
-    @movie.name %>!</h1>
+    <h1> Let's write a groovy review for <%= @movie.genre.name %> <%= @movie.name %>!</h1>
 <% else %>
     <h1> Add a groovy Review! </h1>
 <% end %>
