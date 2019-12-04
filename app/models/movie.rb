@@ -8,7 +8,9 @@ class Movie < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
 
-  def self.alphabetical_order #scope 
+  scope :grouped_ratings, -> {left_joins(:reviews).group(:id).order('avg(stars) desc')} #scope
+
+  def self.alphabetical_order #scope
     order(:name)
   end
 
