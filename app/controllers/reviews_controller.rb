@@ -1,7 +1,11 @@
 class ReviewsController < ApplicationController
 
   def index
-
+    if @movie = Movie.find.by_id(params[:movie_id])
+      @reviews = @movie.reviews.all
+    else
+      @review = Review.all
+    end
   end
 
   def new
@@ -20,6 +24,10 @@ class ReviewsController < ApplicationController
     else
         render :new
     end
+  end
+
+  def show
+    @review = Review.find_by_id(params[:id])
   end
 
   private
