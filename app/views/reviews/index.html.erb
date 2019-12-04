@@ -1,0 +1,12 @@
+<% if @movie %>
+    <h1> View all the reviews for <%= @movie.name %>!</h1>
+<% else %>
+    <h1> View all the groovy reviews </h1>
+<% end %>
+
+<% @reviews.each do |r| %>
+    <h2> <%= r.movie.name %> </h2>
+    <h2> <%= r.title %> </h2>
+    <h2> <%= r.stars %> </h2>
+    <p> <%= r.content %> </p> 
+<% end %>
