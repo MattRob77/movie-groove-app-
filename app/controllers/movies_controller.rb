@@ -21,8 +21,8 @@ class MoviesController < ApplicationController
   end
 
   def ratings
-
-  end 
+    @movies = Movie.grouped_ratings #gives access to scope method 
+  end
 
 private
 

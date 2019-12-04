@@ -1,1 +1,9 @@
-<h1> Welcome to your ratings page </h1> 
+<h1> Check out these groovy ratings </h1>
+
+<% @movies.each do |m| %>
+  <h2><%= m.name %> - <%= m.description %></h2>
+  <% m.reviews.each do |r| %>
+    <h4><%= r.title %> - <%= r.stars %></h4>
+    <p><%= r.content %></p>
+  <% end %>
+<% end %>
