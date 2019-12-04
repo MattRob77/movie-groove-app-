@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2019_11_27_165805) do
     t.string "title"
     t.string "content"
     t.integer "user_id"
-    t.integer "Movie_id"
+    t.integer "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Movie_id"], name: "index_reviews_on_Movie_id"
+    t.index ["movie_id"], name: "index_reviews_on_movie_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -56,6 +56,6 @@ ActiveRecord::Schema.define(version: 2019_11_27_165805) do
 
   add_foreign_key "movies", "genres"
   add_foreign_key "movies", "users"
-  add_foreign_key "reviews", "Movies"
+  add_foreign_key "reviews", "movies"
   add_foreign_key "reviews", "users"
 end
