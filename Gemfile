@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 
 #omniauth gems
-gem 'omniauth'
+
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 gem 'google-api-client'
