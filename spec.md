@@ -22,3 +22,8 @@ Confirm:
 - [x] Limited logic in controllers
 - [x] Views use helper methods if appropriate
 - [x] Views use partials if appropriate
+
+Bonus:
+- [ ] Add Edit reviews link
+- [ ] Include some CSS features
+- [ ] include readme file 
