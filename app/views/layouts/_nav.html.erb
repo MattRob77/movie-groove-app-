@@ -1,13 +1,26 @@
-<ul>
-    <li><%= link_to "Home", root_path %></li>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Movie<br>Groove</b></h3>
+  </div>
+  <div class="w3-bar-block">
     <% if !user_signed_in? %>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "Signup", new_user_registration_path %></li>
-          <li><%= link_to "See all reviews", reviews_path %></li>
+          <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "Login", new_user_session_path %></li>
+          <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "Signup", new_user_registration_path %></li>
+          <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "See all reviews", reviews_path %></li>
     <% else %>
-          <li><%= link_to "Add a Movie", new_movie_path %></li>
-          <li><%= link_to "See all reviews", reviews_path %></li>
-          <li><%= link_to "Edit reviews", edit_review_path(:id) %></li> 
-          <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
+          <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "Add a Movie", new_movie_path %></li>
+          <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "See all reviews", reviews_path %></li>
+          <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
     <% end %>
-</ul>
+  </div>
+</nav>
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Movie Groove</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
