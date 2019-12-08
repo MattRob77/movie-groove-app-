@@ -1,1 +1,26 @@
-<h1> This is your review edit page </h1> 
+<%= form_for(@review) do |f|%>
+
+   <div>
+      <%= f.label :movie_id, "Select a Movie" %>
+      <%= f.collection_select :movie_id, Movie.all, :id, :name, include_blank: true %>
+  </div>
+
+
+  <div>
+    <%= f.label :stars %>
+    <%= f.number_field :stars, min:1, max:5 %>
+  </div>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <%= f.submit %>
+
+  <% end %>
