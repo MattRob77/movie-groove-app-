@@ -1,32 +1,28 @@
-# Movie-Groove-app (Movie Review Site)
+# Movie Groove
 
-## User
-- Username
-- Email
-- Password
-- has_many :reviews
-- has_many :movies through: :reviews
+Rails project for FlatIron School
+Movie Review web application
 
-#Genre
-- Name
-- has_many :movies
+## Getting Started
+To get the Rails server running locally:
+
+Clone this repo
+bundle install to install all req'd dependencies
+rake db:migrate to make all database migrations
+rails s to start the local server-localhost:3000
 
 
-## Movie
-- Name
-- Description
-- genre_id
-- has_many :reviews
-- has_many :users through: :reviews
-- belongs_to :genre
+### Prerequisites
+Devise - For implementing authentication
+Ruby version 2.4.4 and newer
 
 
 
-## Reviews
-- Stars
-- Title
-- Content
-- Movie_id
-- User_id
-- belongs_to :movie
-- belongs_to :user
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* My cohort lead Corinna Moore
+* My cohort classmates
