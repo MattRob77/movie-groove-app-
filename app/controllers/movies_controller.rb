@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
-    @movie.build_genre
+    @movie.build_genre #Build/another word for new object
   end
 
   def create
@@ -15,18 +15,18 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path
     else
-        @movie.build_genre
+        @movie.build_genre #Build/another word for new object
       render :new
     end
   end
 
   def ratings
-    @movies = Movie.grouped_ratings #gives access to scope method 
+    @movies = Movie.grouped_ratings #gives access to scope method
   end
 
 private
 
   def movie_params
-    params.require(:movie).permit(:name, :description, :user_id, :genre_id, genre_attributes: [:name])
+    params.require(:movie).permit(:name, :description, :user_id, :genre_id, genre_attributes: [:name]) #schema
   end
 end
