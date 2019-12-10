@@ -12,6 +12,7 @@
     <% else %>
           <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "Add a Movie", new_movie_path %></li>
           <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "See all reviews", reviews_path %></li>
+          <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "Add a review", new_review_path %></li> 
           <li class="w3-bar-item w3-button w3-hover-white"><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
     <% end %>
   </div>
