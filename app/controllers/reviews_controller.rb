@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = current_user.reviews.build(review_params)
+    @review = current_user.reviews.build(review_params) #Stored in private (review_params)
     if @review.save
         redirect_to review_path(@review)
     else
@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
 
   def edit
       @review = Review.find_by_id(params[:id])
-  end 
+  end
 
   def update
     @review = Review.find_by_id(params[:id])
