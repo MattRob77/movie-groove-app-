@@ -26,7 +26,7 @@ Confirm:
 Bonus:
 - [x] Add Edit reviews link
 - [x] Include some CSS features
-- [ ] include readme file
+- [x] include readme file
 
 
 

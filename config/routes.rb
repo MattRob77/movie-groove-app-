@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   get 'movies/grouped_ratings', to: 'movies#ratings'
 
   resources :reviews
-  resources :movies
+  resources :movies do
   resources :reviews, only: [:new, :index]
-  
+  end 
+
   resources :genres
   devise_for :users, path: "users", :controllers => {registrations: 'registrations', :omniauth_callbacks => "callbacks" }
   #devise only handles users
