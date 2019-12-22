@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-
+  #before_action :find_movie, only:[:show, :update, :destroy]
   #Rails API in comments
 
   def index
@@ -25,6 +25,10 @@ class MoviesController < ApplicationController
 
   def ratings
     @movies = Movie.grouped_ratings #gives access to scope method
+  end
+
+  def destroy
+
   end
 
 private
