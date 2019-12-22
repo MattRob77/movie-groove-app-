@@ -28,7 +28,8 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-
+    #@movie.destroy
+    #render json: @movie
   end
 
 private

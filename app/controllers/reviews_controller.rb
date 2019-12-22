@@ -46,14 +46,15 @@ class ReviewsController < ApplicationController
     #render json: @review
     #else
     #render json: {errors: @review.error.full_messages}
-    #end 
+    #end
     @review = Review.find_by_id(params[:id])
     @review.update(review_params)
     redirect_to review_path(@review)
   end
 
   def destroy
-
+    #@review.destroy
+    #render json: @review
   end
 
   def blank_stars

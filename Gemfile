@@ -30,6 +30,7 @@ gem 'dotenv-rails'
 gem 'google-api-client'
 
 gem 'devise'
+# gem 'rack-cors'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
