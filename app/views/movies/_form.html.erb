@@ -11,6 +11,8 @@
     <%= f.text_field :description %>
   </div>
 
+
+
   <p> Select a Genre that already exists: </p>
   <div>
     <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "Pick one" %>

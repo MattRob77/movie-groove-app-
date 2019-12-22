@@ -4,9 +4,11 @@
     <h1> View all the groovy reviews </h1>
 <% end %>
 
+
+
 <% @reviews.each do |r| %>
     <h2> <%= r.movie.name %> </h2>
     <h2> <%= r.title %> - <%= r.stars %> </h2>
     <p> <%= r.content %> </p>
-    <%= link_to "Edit your review", edit_review_path(r.id) %> 
+    <%= link_to "Edit your review", edit_review_path(r.id) %>
 <% end %>

@@ -1,10 +1,13 @@
 class MoviesController < ApplicationController
 
+  #Rails API in comments
+
   def index
     @movies = Movie.all
+    #render json: @movies
   end
 
-  def new
+  def new #Will not need using api
     @movie = Movie.new
     @movie.build_genre #Build/another word for new object
   end

@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.build(review_params) #Stored in private (review_params)
     if @review.save
         redirect_to review_path(@review)
+          #render json: @reviews
     else
         render :new
     end
@@ -27,9 +28,10 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find_by_id(params[:id])
+      #render json: @review
   end
 
-  def edit
+  def edit #Will not need using api
       @review = Review.find_by_id(params[:id])
   end
 
@@ -37,6 +39,10 @@ class ReviewsController < ApplicationController
     @review = Review.find_by_id(params[:id])
     @review.update(review_params)
     redirect_to review_path(@review)
+  end
+
+  def blank_stars
+    5 - stars.to_i
   end
 
   private
